@@ -5,6 +5,7 @@
 - Rails 5.0.7.2
 
 #account テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique:true|
@@ -16,6 +17,7 @@
 - has_many:groups
 
 #chat テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |content|text|null: false|
@@ -29,6 +31,7 @@
 
 
 #group テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, unique:true|
@@ -39,6 +42,7 @@
 
 
 #group_member テーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key:true|
