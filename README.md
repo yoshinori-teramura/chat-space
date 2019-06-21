@@ -13,11 +13,11 @@
 |password|string|null: false, unique:true|
 
 # Association
-- has_many:chats
+- has_many:messages
 - has_many:groups
 
 
-#chat テーブル
+#message テーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -39,7 +39,7 @@
 |group_name|string|null: false, unique:true|
 
 # Association
-- has_many:chats
+- has_many:messages
 - has_many:grope_members
 
 
