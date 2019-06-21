@@ -4,7 +4,7 @@
 - Ruby 2.5.1
 - Rails 5.0.7.2
 
-#account テーブル
+#user テーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -13,8 +13,9 @@
 |password|string|null: false, unique:true|
 
 # Association
-- has_many:accounts
+- has_many:chats
 - has_many:groups
+
 
 #chat テーブル
 
@@ -25,8 +26,9 @@
 |account_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |timestamp|timestamp|null: false| 
+
 # Association
-- belongs_to:account
+- belongs_to:user
 - belongs_to:grope
 
 
@@ -49,7 +51,7 @@
 |account_id|integer|null: false, foreign_key:true|
 
 # Association
-- belongs_to:account
+- belongs_to:user
 - belongs_to:group
 
 
