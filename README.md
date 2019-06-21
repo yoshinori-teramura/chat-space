@@ -14,7 +14,8 @@
 
 # Association
 - has_many:messages
-- has_many:groups
+- has_many:group_menbers
+- has_many:groups, through: groups_members
 
 
 #message テーブル
@@ -41,6 +42,7 @@
 # Association
 - has_many:messages
 - has_many:grope_members
+- has_many:users, through: group_members
 
 
 #group_member テーブル
