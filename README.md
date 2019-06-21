@@ -15,7 +15,7 @@
 # Association
 - has_many:messages
 - has_many:group_menbers
-- has_many:groups, through: groups_members
+- has_many:groups, through: group_members
 
 
 #message テーブル
