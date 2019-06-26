@@ -10,15 +10,21 @@
           %li.left-content__header__box__menu__edit-user
           =link_to "", class: "fa" do
             = fa_icon 'cog'
-
-
+            
       %p.left-content__group-contents__group-name sample-grupe
       %p.left-content__group-contents__last hello! 
+  
+  -# 左側コンテンツ
+  
+  
   .right-content
     .right-content__header
-      %p.right-content__header__groupe-name sample
-      %p.right-content__header__groupe-members Members: seo neko
+      .right-content__header__groupe
+        %p.right-content__header__groupe__name sample
+        %p.right-content__header__groupe__members Members: 
+
       %a.right-content__header__edit_button{href:''} Edit
+    
     .right-content__main
       %p.right-content__main__name seo
       %p.right-content__main__timestamp 2019/06/25(Wed) 02:03:05
@@ -32,3 +38,4 @@
       %p.right-content__footer__submit-button send
       
 
+  -# 右側コンテンツ 
