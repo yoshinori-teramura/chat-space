@@ -1,0 +1,55 @@
+.contents
+  .left-content
+    .left-content__header
+      .left-content__header__box
+        %p.left-content__header__box__user-name seo
+        %ul.left-content__header__box__menu
+          %li.left-content__header__box__menu__new-group
+            =link_to "", class: "fa" do
+              = fa_icon 'edit'
+          %li.left-content__header__box__menu__edit-user
+            =link_to "", class: "fa" do
+              = fa_icon 'cog'
+    .left-content__group-content       
+      %p.left-content__group-content__group-name sample-grupe
+      %p.left-content__group-content__last hello! 
+    
+  -# 左側コンテンツ
+  
+  
+  .right-content
+    .right-content__header
+      .right-content__header__groupe
+        %p.right-content__header__groupe__name sample
+        %p.right-content__header__groupe__members Members: 
+
+      .right-content__header__edit_button
+        = link_to 'Edit'
+     
+
+    
+    .right-content__main
+      .right-content__main__box
+        %p.right-content__main__box__name seo
+        %p.right-content__main__box__timestamp 2019/06/25(Wed) 02:03:05
+      %p.right-content__main__message Hello world!
+      .right-content__main__box
+        %p.right-content__main__box__name neko
+        %p.right-content__main__box__timestamp 2019/06/25(Wed) 02:03:05
+      %p.right-content__main__message good bye
+
+
+    .right-content__footer
+      .right-content__footer__box
+        %form.right-content__footer__box__new-message(action="")
+        %input(type="hidden")/
+        .right-content__footer__box__input
+          %input.right-content__footer__box__input__text(placeholder="type a message")
+          %label.right-content__footer__box__input__image(for="message_image")
+            =link_to "", class: "fa" do
+              = fa_icon 'image'
+
+        %input.right-content__footer__box__submit-button(type="submit" value="Send")
+        
+
+  -# 右側コンテンツ 
