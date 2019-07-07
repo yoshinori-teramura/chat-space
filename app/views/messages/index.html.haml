@@ -11,10 +11,9 @@
           %li.left-content__header__box__menu__edit-user
             =link_to edit_user_path(current_user), class: "fa" do
               = fa_icon 'cog'
-    .left-content__group-content       
-      %p.left-content__group-content__group-name sample-grupe
-      %p.left-content__group-content__last hello! 
-    
+    .left-content__group-content
+      = render partial: 'group-content'       
+      
   -# 左側コンテンツ
   
   
