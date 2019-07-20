@@ -11,10 +11,9 @@
           %li.left-content__header__box__menu__edit-user
             =link_to edit_user_path(current_user), class: "fa" do
               = fa_icon 'cog'
-    .left-content__group-content       
-      %p.left-content__group-content__group-name sample-grupe
-      %p.left-content__group-content__last hello! 
-    
+    .left-content__group-content
+      = render partial: 'group-content'       
+      
   -# 左側コンテンツ
   
   
@@ -25,10 +24,9 @@
         %p.right-content__header__groupe__members Members: 
 
       .right-content__header__edit_button
-        = link_to 'Edit'
-     
-
-    
+        -# =link_to 'edit', 'groups/1/edit'
+        =link_to 'Edit', edit_group_path(current_user)
+          
     .right-content__main
       .right-content__main__box
         %p.right-content__main__box__name seo
