@@ -10,28 +10,18 @@
         
   
 
-  .right-content__main__box
+  .right-content__main
     = render @messages
+    -# = render partial: 'message', collection: @messages
   
   .right-content__footer
-    .right-content__footer__box
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .right-content__footer__box__input
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        .right-content__footer__box__submit-button
-          = f.submit 'Send', class: 'form__submit'
-      -# %form.right-content__footer__box__new-message(action="")
-      -# %input(type="hidden")
-      -# .right-content__footer__box__input
-      -#   %input.right-content__footer__box__input__text(placeholder="type a message")
-      -#   %label.right-content__footer__box__input__image(for="message_image")
-      -#     =link_to "", class: "fa" do
-      -#       = fa_icon 'image'
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'right-content__footer__text', placeholder: 'type a message'
+      .right-content__footer__form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'right-content__footer__send-button'
 
-      -# %input.right-content__footer__box__submit-button(type="submit" value="Send")
-      
 
   -# 右側コンテンツ 

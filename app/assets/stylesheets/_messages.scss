@@ -94,6 +94,7 @@
     &__box {
       display: flex;
     
+    
 
       &__name {
         padding: 46px 10px 0 0;
@@ -121,50 +122,107 @@
   }
 
   &__footer {
-    
-    padding: 20px 40px;
-    background-color:#dddddd;
+    background-color: #dddddd;
+    box-sizing: border-box;
+    height: 90px;
+    padding-top: 20px;
+    padding-left: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
-    &__box{ 
-      display: flex;
+
+
+    &__text {  
+      width: 800px;
+      height: 50px;
+      padding: 0px
+  
+    }
+
+    
+    &__send-button {
+      background-color: #38aef0;
+      color: white;
+      height: 50px;
+      // @include side-p;
+      text-align: center;
+      line-height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+
+    }
+  }
+}  
+
+.right-content__footer__form__mask {
+  background-color: #ffffff;
+  height: 50px;
+  
+}
+
+.icon {
+padding-top: 20px;
+padding-left: 5px;
+padding-right: 5px;
+}
+
+.hidden {
+display: none;
+}
+
+.new_message {
+  display: flex;  
+}
+
+  // &__footer {
+    
+  //   padding: 20px 40px;
+  //   background-color:#dddddd;
+  //   height: 90px;
+    
+
+  //   &__box{ 
+  //     display: flex;
 
       
 
-      &__input {
-        width: 100%;
-        height: 50px;
-        padding: 0 40px 0 10px;
-        position: relative;
-        background-color: white;
+  //     &__input {
+  //       width: 100%;
+  //       height: 50px;
+  //       padding: 0 40px 0 10px;
+  //       position: relative;
+  //       background-color: white;
 
-        &__text {
-        width: 100%;
-        height: 50px;
-        border-style: none;
-        }
+  //       &__text {
+  //       width: 100%;
+  //       height: 50px;
+  //       border-style: none;
+  //       }
 
-        &__image {
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer;
-        }
+  //       &__image {
+  //         font-size: 1.3rem;
+  //         // position: absolute;
+  //         top: 10px;
+  //         right: 10px;
+  //         cursor: pointer;
+  //       }
 
 
-      }
+  //     }
 
-      &__submit-button {
-      width: 100px;
-      height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
-      background-color: #38aef0;
-      color: white;
-      cursor: pointer;
-      }
-    }
-  }
+  //     &__submit-button {
+  //     width: 100px;
+  //     height: 50px;
+  //     padding: 0 30px;
+  //     margin-left: 15px;
+  //     background-color: #38aef0;
+  //     color: white;
+  //     cursor: pointer;
+  //     }
+  //   }
+  // }
 
-}  
+
 
