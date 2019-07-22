@@ -19,7 +19,7 @@
       = f.text_field :content, class: 'right-content__footer__text', placeholder: 'type a message'
       .right-content__footer__form__mask
         = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
+          = fa_icon 'picture-o ' , class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'right-content__footer__send-button'
 
