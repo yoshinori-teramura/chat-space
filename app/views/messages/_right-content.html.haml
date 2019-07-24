@@ -1,0 +1,27 @@
+.right-content
+  .right-content__header
+    .right-content__header__groupe
+      %p.right-content__header__groupe__name sample
+      %p.right-content__header__groupe__members Members: 
+
+    .right-content__header__edit_button
+      
+      =link_to 'Edit', edit_group_path(current_user) 
+        
+  
+
+  .right-content__main
+    = render @messages
+    -# = render partial: 'message', collection: @messages
+  
+  .right-content__footer
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'right-content__footer__text', placeholder: 'type a message'
+      .right-content__footer__form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o ' , class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'right-content__footer__send-button'
+
+
+  -# 右側コンテンツ 

@@ -94,6 +94,7 @@
     &__box {
       display: flex;
     
+    
 
       &__name {
         padding: 46px 10px 0 0;
@@ -121,50 +122,61 @@
   }
 
   &__footer {
+    background-color: #dddddd;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: calc(100vw - 300px);
     
-    padding: 20px 40px;
-    background-color:#dddddd;
 
-    &__box{ 
-      display: flex;
 
+
+    &__text {  
+      width: 880px;
       
-
-      &__input {
-        width: 100%;
-        height: 50px;
-        padding: 0 40px 0 10px;
-        position: relative;
-        background-color: white;
-
-        &__text {
-        width: 100%;
-        height: 50px;
-        border-style: none;
-        }
-
-        &__image {
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer;
-        }
-
-
-      }
-
-      &__submit-button {
-      width: 100px;
       height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
+      border-width: 0px;
+      padding: 0px 10px;
+  
+    }
+
+    &__form__mask {
+      background-color: #ffffff;
+      height: 50px;
+      padding-right: 10px;
+      font-size: 20px;
+    }
+
+    
+    &__send-button {
       background-color: #38aef0;
       color: white;
-      cursor: pointer;
-      }
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      float: right;
+
     }
   }
-
 }  
 
+
+
+.icon {
+padding: 15px 0px;
+font-size: 1.3em;
+
+}
+
+.hidden {
+display: none;
+}
+
+.new_message {
+  display: flex;  
+}
