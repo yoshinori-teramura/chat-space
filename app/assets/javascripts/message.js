@@ -4,7 +4,7 @@ $(function(){
   function buildHTML(message) {
     
     var content = message.content ? `${ message.content }` : "";
-    var img = message.image ? `<img src= ${ message.image }>` : "";
+    var img = (message.image) ? `<img src= ${ message.image }>` : "";
     var html = `<div class="right-content__main__box" data-id="${message.id}">
                   <div class="right-content__main__box__namem">
                     ${message.user_name}
