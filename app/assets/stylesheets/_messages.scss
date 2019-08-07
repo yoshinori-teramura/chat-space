@@ -90,6 +90,7 @@
   &__main {
     padding: 0px 40px;
     height: calc(100vh - 190px);
+    overflow:auto;
 
     &__box {
       display: flex;

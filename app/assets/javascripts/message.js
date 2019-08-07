@@ -6,23 +6,25 @@ $(function(){
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
     var html = `<div class="right-content__main__box" data-id="${message.id}">
-                    <p class="right-content__main__box__namem>
-                      ${message.user_name}
-                    </p>  
-                    <p class="right-content__main__box__timestamp">
-                      ${message.date}
-                    </p>
+                  <div class="right-content__main__box__namem">
+                    ${message.user_name}
+                  </div>  
+                  <p class="right-content__main__box__timestamp">
+                    ${message.date}
+                  </p>
                 </div>
                 <div class="right-content__main__message">
-                    <p class="lower-message__content">
-                    <div>
-                      ${content}
-                    </div>  
-                    <p>
-                      ${img}
-                    </p>
+                  <p class="lower-message__content">
+                    ${content}
+                  <p>
+                    ${img}
+                  </p>
                 </div>`
   return html;
+  }
+
+  function ScrollToNewMessage(){
+    $('.right-content__maine').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');
   }
 
 
@@ -50,13 +52,19 @@ $(function(){
       var html = buildHTML(data);
       console.log(html)
       $('.right-content__main').append(html);
-      // $('#message_content').val(''); //input内のメッセージを消しています。
+      $('.right-content__footer__text').val(''); //input内のメッセージを消しています。
+
+      $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
+
+    
+      
+
     })
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
     .always(function(data){
-      $('.submit-btn').prop('disabled', false);　//ここで解除している
+      $('.right-content__footer__send-button').prop('disabled', false); //送信ボタンのここで解除している
     })
   })
 });
