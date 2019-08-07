@@ -66,15 +66,3 @@ $(function(){
 
     
       
-
-    })
-    .fail(function(data){
-      alert('エラーが発生したためメッセージは送信できませんでした。');
-    })
-    .always(function(data){
-      $('.right-content__footer__send-button').prop('disabled', false); //送信ボタンのここで解除している
-    })
-  })
-});
-
-
