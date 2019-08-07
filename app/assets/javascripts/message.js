@@ -1,3 +1,5 @@
+
+
 $(function(){
   function buildHTML(message) {
     
@@ -40,12 +42,14 @@ $(function(){
       contentType: false
     })
     
+
+
     .done(function(data){
-      console.log(data)
+      
       var html = buildHTML(data);
-      console.log(html)
+      
       $('.right-content__main').append(html);
-      $('.right-content__footer__text')[0].reset();
+      $('.right-content__footer__text').val(''); //input内のメッセージを消しています。
 
       $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
 
@@ -57,12 +61,9 @@ $(function(){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
     .always(function(data){
-      $('.right-content__footer__send-button').prop('disabled', false); //送信ボタンのここで解除している
+      $('.right-content__footer__send-button').prop('disabled', false);
     })
   })
 });
 
-      $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
 
-    
-      
