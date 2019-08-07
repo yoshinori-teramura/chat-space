@@ -6,7 +6,7 @@ $(function(){
     var content = message.content ? `${ message.content }` : "";
     var img = (message.image) ? `<img src= ${ message.image }>` : "";
     var html = `<div class="right-content__main__box" data-id="${message.id}">
-                  <div class="right-content__main__box__namem">
+                  <div class="right-content__main__box__name">
                     ${message.user_name}
                   </div>  
                   <p class="right-content__main__box__timestamp">
@@ -49,8 +49,8 @@ $(function(){
       var html = buildHTML(data);
       
       $('.right-content__main').append(html);
-      $('.right-content__footer__text').val(''); //input内のメッセージを消しています。
-
+      $('#new_message')[0].reset();
+      
       $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
 
     
