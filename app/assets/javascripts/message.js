@@ -24,7 +24,7 @@ $(function(){
   }
 
   function ScrollToNewMessage(){
-    $('.right-content__maine').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');
+    $('.right-content__main').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');
   }
 
 
@@ -32,6 +32,7 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
+    console.log(message)
     var url = (window.location.href);
     $.ajax({  
       url: url,
@@ -64,6 +65,33 @@ $(function(){
       $('.right-content__footer__send-button').prop('disabled', false);
     })
   })
+  
+
+
+  function reloadMessages(){
+    var last_message_id = $('.right-content__main').last().data('id');
+   
+    $.ajax({
+    url: 'api/messages',
+    type: 'GET',
+    data:{id: last_message_id},
+    dataType: 'json'
+    })
+
+     .done(function(messages){
+      messages.forEach(function(message){
+        var insertHTML = buildHTML(message)
+        $('#message').append(insertHTML)
+      });
+
+       $('.right-content__main').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');
+    })
+
+     .fail(function(){
+      console.log('error');
+    });
+  };
+  setInterval(reloadMessages, 3000);
 });
 
 
