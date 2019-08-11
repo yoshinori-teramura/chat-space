@@ -1,5 +1,4 @@
 
-
 $(function () {
   var search_list = $('#user-search-result');
   
@@ -32,8 +31,6 @@ $(function () {
           },
           dataType: 'json'
         })
-  
-  
         .done(function (users) {
           console.log(users)
           $('#user-search-result').empty();
@@ -46,7 +43,6 @@ $(function () {
             appendNoUser('一致るするユーザーはありません');
           }
         })
-  
         .fail(function () {
           alert('ユーザーの検索に失敗しました');
         })
@@ -62,7 +58,6 @@ $(function () {
     $('#chat-group-users').append(html);
   }
 
-  
    $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
     var user_id = $(this).data('user-id');
     var user_name = $(this).data('user-name');
