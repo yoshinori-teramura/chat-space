@@ -2,10 +2,7 @@
 
 $(function(){
   function buildHTML(message) {
-    var img = ""
-    if (message.image !== null) {
-        img = `<img src="${message.image.url}">`
-    }
+    var img = (message.image)? `<imag class="lower-message__image" src=${message.image}>` :"";
     
     var html = `<div class="right-content__main__box" data-id="${message.id}">
                   <div class="right-content__main__box__name">
@@ -36,9 +33,9 @@ $(function(){
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
-    console.log(message)
+ 
     var url = (window.location.href);
-    console.log(url)
+ 
     $.ajax({  
       url: url,
       type: 'POST',
@@ -51,8 +48,10 @@ $(function(){
 
 
     .done(function(data){
+ 
       
       var html = buildHTML(data);
+ 
       
       $('.right-content__main').append(html);
       $('#new_message')[0].reset();
@@ -72,34 +71,38 @@ $(function(){
   })
   
 
+  var reloadMessages = function () {
+   
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.right-content__main__box:last').data('id');
+     
+      console.log(last_message_id)
+     
 
-  
-
-  var interval = setInterval(function() {
-    if (location.href.match(/\/groups\/\d+\/messages/)){
-      $('.right-content__main').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');
-      var last_message_id = $('.right-content__main').last().data('id');
-      var href = 'api/messages'
-      $.ajax({
-        url: 'api/messages',
-        type: "GET",
-        data: {id: last_message_id},
-        dataType: "json"
+      $.ajax({ 
+        url: "api/messages", 
+        type: 'get', 
+        dataType: 'json', 
+        data: {last_id: last_message_id}
       })
-      .done(function(messages) {
-        messages.forEach(function(message) {
-          var insertHTML = buildHTML(message)
-          $('#message').append(insertHTML)
-          $('.right-content__main').animate({scrollTop: $('.right-conten__main')[0].scrollHeight}, 'fast');
+      .done(function (messages) {
+       
+        var insertHTML = '';
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message); 
+          $('.right-content__main').append(insertHTML);
         })
+        $('.right-content__main').animate({scrollTop: $('.right-content__main')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+        //  alert('succes');
       })
-      .fail(function() {
+      .fail(function () {
         alert('自動更新に失敗しました');
       });
-    } else {
-        clearInterval(interval);
-      }
-  } , 5000 );
+      
+    }
+  };
+  setInterval(reloadMessages, 5000);
 });
 
+  
 
