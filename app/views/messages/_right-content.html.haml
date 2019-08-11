@@ -1,11 +1,11 @@
 .right-content
   .right-content__header
     .right-content__header__groupe
-      %p.right-content__header__groupe__name sample
-      %p.right-content__header__groupe__members Members: 
-
+      %p.right-content__header__groupe__name #{@group.name}
+      %p.right-content__header__groupe__members Member：
+        
+       
     .right-content__header__edit_button
-      
       =link_to 'Edit', edit_group_path(current_user) 
         
   
@@ -22,6 +22,3 @@
           = fa_icon 'picture-o ' , class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'right-content__footer__send-button'
-
-
-  -# 右側コンテンツ 
