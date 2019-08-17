@@ -69,6 +69,7 @@ gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-doc'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
 gem 'jquery-rails'
 
