@@ -2,7 +2,7 @@
   .right-content__header
     .right-content__header__groupe
       %p.right-content__header__groupe__name #{@group.name}
-      %p Menber:
+      %p.right-content__header__groupe__members Menber:
       %p.right-content__header__groupe__members
         - @members.each do |member|
           =member.name	       
