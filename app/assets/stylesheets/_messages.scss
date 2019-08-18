@@ -179,7 +179,8 @@ display: none;
 }
 
 .new_message {
-  display: flex;  
+  display: flex;
+  width: calc(100vw - 400px);  
 }
 
 .lower-message__image{
