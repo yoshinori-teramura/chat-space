@@ -41,7 +41,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       console.log(data);
-      console.log(html)
+      console.log(html);
       $('.right-content__main').append(html);
       $('#new_message')[0].reset();
       $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
