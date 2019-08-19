@@ -2,8 +2,12 @@
   .right-content__header
     .right-content__header__groupe
       %p.right-content__header__groupe__name #{@group.name}
-      %p.right-content__header__groupe__members Menbers: #{@members}
-     
+      %p.right-content__header__groupe__members Menber:
+      %p.right-content__header__groupe__members
+        - @members.each do |member|
+          =member.name	       
+        
+        
        
     .right-content__header__edit_button
       =link_to 'Edit', edit_group_path(current_user) 
