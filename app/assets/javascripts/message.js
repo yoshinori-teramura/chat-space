@@ -13,7 +13,7 @@ $(function(){
                 <div class="right-content__main__message">
                   <p class="lower-message__content">
                     ${message.content}
-                  <p class="lower-message__image">
+                  <p>
                     ${img}
                   </p>
                 </div>`
