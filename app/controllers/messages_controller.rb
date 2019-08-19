@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
       @message = @group.messages.new(message_params)
       if @message.save
         respond_to do |format|
-          format.html {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
+          format.html 
             # {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました}'
           format.json
         end
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
     private
   
     def message_params
-      params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+      params.require(:message).permit(:content, :image).merge(user_id: current_user.id, group_id: params[:group_id])
     end
   
     def set_group
