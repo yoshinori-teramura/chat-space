@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
 
       @message = @group.messages.new(message_params)
       @message.user_id = current_user.id  
-      @message.group = Group.find(params[:group_id]) 
+      
       if @message.save
         respond_to do |format|
           # format.html 
