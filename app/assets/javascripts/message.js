@@ -1,8 +1,8 @@
 
 $(function(){
   function buildHTML(message) {
-    var img = (message.image)? `<imag class="lower-message__image" src=${message.image}>` :"";
-    // console.log(img)
+    var img = (message.image)? `<img class="lower-message__image" src="${message.image}">` :"";
+    console.log(img)
     var html = `<div class="right-content__main__box" data-id="${message.id}">
                   <div class="right-content__main__box__name">
                     ${message.user_name}
@@ -14,9 +14,10 @@ $(function(){
                 <div class="right-content__main__message">
                   <p class="lower-message__content">
                     ${message.content}
-                  <p>
+                  </p>  
+                
                     ${img}
-                  </p>
+                  
                 </div>`
                 // console.log(message.image)
 
@@ -45,8 +46,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       console.log(data);
-      // console.log(html);
       $('.right-content__main').append(html);
+      console.log(html);
       $('#new_message')[0].reset();
       $('.right-content__main').animate({scrollTop: $(".right-content__main")[0].scrollHeight }, 'fast');
     })
