@@ -9,7 +9,7 @@
         
             
     .right-content__header__edit_button
-      =link_to 'Edit', edit_group_path(current_user) 
+      =link_to 'Edit',  edit_group_path(params[:group_id]), method: :get
         
   
 
